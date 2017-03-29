@@ -53,5 +53,15 @@ public class CClient {
         return client.get(client.indexOf(client_)).getAnimal().get(client.get(client.indexOf(client_)).getAnimal().indexOf(animal)).getRecord();
     }
     
-    
+    public float Vaccine(MClient client_) {
+        float totalPrice = 0;
+        
+        for(MAnimal animal_ : client_.getAnimal()) {
+            for(MVaccine vaccine_ : animal_.getRecord().getVaccine()) {
+                totalPrice += vaccine_.getPrice();
+            }
+        }
+        
+        return  totalPrice;
+    }
 }
